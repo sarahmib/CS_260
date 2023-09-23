@@ -1,4 +1,4 @@
-### Share the Day
+# Share the Day
 
 Tired of messages for hangout plans getting buried in the group chat? Forgetting details of plans you've made? Share the day fixes this problem by allowing the group access to a shared calendar where you can easily create, view, and respond to all those fun events! In just a few clicks, everyone will know the time, date, location, and nature of your event, leaving you free to see what everyone else is planning. Allow yourself and your friends to let loose and Share the Day!
 
@@ -6,7 +6,7 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
 
 ![Main page of the site (what you see when you login)](https://github.com/sarahmib/CS_260/blob/main/20230923_130246.jpg?raw=true)
 
-##### Features:  
+### Features:  
 
   -Visibility of all events input into the calendar (updated live)  
   
@@ -19,7 +19,7 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
   -By default, the event shown on the right will be the next event on the calendar  
   
 
-##### Technology usage:
+### Technology usage:
 
   **Authentication:**  
   While each user will not have a specific login, the calendar itself will have a login, with the calendar's name being displayed at the     top. When the user inputs a *unique* calendar name (it cannot have been used before by another or the same user) along with a password, a calendar is created; this calendar can then be accessed by the others in the user's group using the same credentials.
