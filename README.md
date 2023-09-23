@@ -21,11 +21,11 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
 
 ##### Technology usage:
 
-  **Authentication**
+  **Authentication:**  
   While each user will not have a specific login, the calendar itself will have a login, with the calendar's name being displayed at the     top. When the user inputs a *unique* calendar name (it cannot have been used before by another or the same user) along with a password, a calendar is created; this calendar can then be accessed by the others in the user's group using the same credentials.
 
-  **Database data**
+  **Database data:**  
   The events that users input will be stored in the websites database and shown to the user whenever they are logged into the calendar
 
-  **Websocket data**
+  **Websocket data:**  
   The calendar with all events and comments input by other users is updated live.
