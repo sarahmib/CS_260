@@ -6,17 +6,17 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
 
 ![Main page of the site (what you see when you login)](https://github.com/sarahmib/CS_260/blob/main/20230923_130246.jpg?raw=true)
 
-##### Features:
+##### Features:  
 
-  -Visibility of all events input into the calendar (updated live)
+  -Visibility of all events input into the calendar (updated live)  
   
-  -Ability to input event name, date, time, place, and extra notes
+  -Ability to input event name, date, time, place, and extra notes  
   
-  -Ability to comment on events submitted to the calendar
+  -Ability to comment on events submitted to the calendar  
   
-  -Clicking on an event will show that event's information to the right of the calendar
+  -Clicking on an event will show that event's information to the right of the calendar  
   
-    -By default, the event shown on the right will be the next event on the calendar
+    -By default, the event shown on the right will be the next event on the calendar  
 
 
 ##### Technology usage:
