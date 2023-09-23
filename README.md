@@ -15,9 +15,9 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
   -Ability to comment on events submitted to the calendar  
   
   -Clicking on an event will show that event's information to the right of the calendar  
-  
-  -By default, the event shown on the right will be the next event on the calendar  
 
+  -By default, the event shown on the right will be the next event on the calendar  
+  
 
 ##### Technology usage:
 
