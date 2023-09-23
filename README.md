@@ -6,14 +6,21 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
 
 ![Main page of the site (what you see when you login)](https://github.com/sarahmib/CS_260/blob/main/20230923_130246.jpg?raw=true)
 
-#####Features:
+##### Features:
+
   -Visibility of all events input into the calendar (updated live)
+  
   -Ability to input event name, date, time, place, and extra notes
+  
   -Ability to comment on events submitted to the calendar
+  
   -Clicking on an event will show that event's information to the right of the calendar
+  
     -By default, the event shown on the right will be the next event on the calendar
 
-#####Technology usage:
+
+##### Technology usage:
+
   **Authentication**
   While each user will not have a specific login, the calendar itself will have a login, with the calendar's name being displayed at the     top. When the user inputs a *unique* calendar name (it cannot have been used before by another or the same user) along with a password, a calendar is created; this calendar can then be accessed by the others in the user's group using the same credentials.
 
