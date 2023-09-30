@@ -192,11 +192,11 @@ Example of a checked radio button `<label for="checkbox1">Check me</label> <inpu
 
 Most input elements share common attributes
 
-Attribute	    Meaning
-name	        The name of the input. This is submitted as the name of the input if used in a form
-disabled	    Disables the ability for the user to interact with the input
-value        	The initial value of the input
-required    	Signifies that a value is required in order to be valid
+Attribute	    Meaning  
+name	        The name of the input. This is submitted as the name of the input if used in a form  
+disabled	    Disables the ability for the user to interact with the input  
+value        	The initial value of the input  
+required    	Signifies that a value is required in order to be valid  
 
 Many input elements have validation built in -- for example, an input with the url attribute won't accept something that's not a url
 You can specify the required attribute
@@ -220,9 +220,12 @@ The `autoplay` attribute automatically plays the audio as soon as the file loads
 The `loop` attribute plays the audio over and over
 
 Video:
-```<video controls width="300" crossorigin="anonymous">
+```
+<video controls width="300" crossorigin="anonymous">
   <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
-</video>```
+</video>
+```
+
 Can use the same `controls` and `autoplay` attributes as you can with `audio`. May need to include the `crossorigin="anonymous"` if you're requesting files from a domain that's not the one serving your content
 
 SVG (scalable vector graphics)
