@@ -31,10 +31,10 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
   The calendar with all events and comments input by other users is updated live.
 
 ## HTML deliverable
-*HTML pages - Four HTML page that represent the ability to login, view a calendar, submit an event, and view information about the site.  
-*Links - The login page automatically links to the calendar viewing page. All pages contain links to each other.  
-*Text - Most text used is on the about page. Other text is in dropdown boxes, such as the M/D/Y selection.  
-*Images - There's an image that will be to the right of the month/year display of the calendar.  
-*Login - Input box and submit button for login.  
-*Database - The event information and comments represent what will be pulled from the database.  
-*WebSocket - Events and comments displayed will also be updated live.  
+*HTML pages - Four HTML page that represent the ability to login, view a calendar, submit an event, and view information about the site.<br>
+*Links - The login page automatically links to the calendar viewing page. All pages contain links to each other.<br>
+*Text - Most text used is on the about page. Other text is in dropdown boxes, such as the M/D/Y selection.<br>
+*Images - There's an image that will be to the right of the month/year display of the calendar.<br>
+*Login - Input box and submit button for login.<br>
+*Database - The event information and comments represent what will be pulled from the database.<br>
+*WebSocket - Events and comments displayed will also be updated live.<br>
