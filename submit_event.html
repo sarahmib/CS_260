@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit an event</title>
+</head>
+<body>
+    <header>
+        <h1>Share the Day</h1>
+        <nav>
+          
+          <menu>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="submit_event.html">Submit an event</a></li>
+            <li><a href="about.html">About</a></li>
+          </menu>
+        </nav>
+
+    </header>
+    <h3>Submit an event</h3>
+
+    <form method="get">
+        Event name: 
+        <label for="event name"></label>
+        <input type="text" id="event name" placeholder="Event" />
+
+        Event date: 
+        <label for="event month"></label>
+        <select id="event month">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option selected>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+
+        /
+        <label for="event day"></label>
+        <select id="event day">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+        </select>
+
+        /
+        <label for="event year"></label>
+        <select id="event year">
+            <option selected>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+        </select>
+
+        <br>
+        Event time:
+        <label for="event hour"></label>
+        <select id="event hour">
+            <option>1</option>
+            <option>2</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+
+        <label for="event minute"></label>
+        <select id="event minute">
+            <option>00</option>
+            <option>05</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>25</option>
+            <option>30</option>
+            <option>35</option>
+            <option>40</option>
+            <option>45</option>
+            <option>50</option>
+            <option>55</option>
+        </select>
+
+        <label for="am pm"></label>
+        <select id="am pm">
+            <option>AM</option>
+            <option>PM</option>
+        </select>
+
+        Event location:
+        <label for="event place"></label>
+        <input type="text" id="event place" placeholder="Location of event" />
+
+        Notes:
+        <label for="notes"></label>
+        <textarea id="notes" name="notes"></textarea>
+        <br>
+
+        <button type="submit">Submit event</button>
+        </form>
+</body>
+</html>
