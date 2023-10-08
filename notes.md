@@ -249,3 +249,326 @@ HTML is fairly simple, but actually drawing on the canvas requires JS
   ctx.stroke();
 </script>
 ```
+
+CSS defines rules - selectors apply the rule to a certain thing, which is followed by a declaration that determines what value a property has -- for example, `color:green` has both the property (color) and the value (green).
+
+```
+p {
+  font-family: sans-serif;
+  font-size: 2em;
+  color: navy;
+  text-shadow: 3px 3px 1px #cccccc;
+}
+```
+^^this rule applies these properties to the paragraph element of HTML
+
+associating CSS with HTML can be done directly using the `style` attribute of an HTML element, or you can use the style element itself to write a rule
+finally, you can use HTML `link` to link to an external CSS document that contains the rules
+`<link rel="stylesheet" href="styles.css" />`
+
+Any definition at a lower level will override one at a higher level. Style explicitly defined on the element will override span which will override p which will override body
+
+CSS defines everything as boxes. Defining styles defines a box on the page. Then, there's content, padding, border, and margin, from the inside to the outside. Padding does background color. Border is the border. Margin defines the area around the box. Width and height of an element is defined by the width and height of the content box
+
+You can change the box-sizing CSS property from the default value of content-box to border-box in order to redefine the width and height to also include the padding and the border. This often makes it easier to style elements when their visual size matches their actual size.
+
+```
+h1 {
+  border-bottom: thin black solid;
+}
+
+section {
+  background: #eeeeee;
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+}
+```
+Example of styling
+
+Combinators
+```
+section h2 {
+  color: #004400;
+}
+```
+for example, this changes h2 headings, but only ones contained within section tags
+
+Combinator	        Meaning	                      Example	        Description
+Descendant	        A list of descendants	        body section	  Any section that is a descendant of a body
+Child	              A list of direct children	    section > p	    Any p that is a direct child of a section
+General sibling	    A list of siblings	          p ~ div	        Any p that has a div sibling
+Adjacent sibling	  A list of adjacent sibling	  p + div         Any p that has an adjacent div sibling
+
+ex.
+```
+h2 ~ p {
+  padding-left: 0.5em;
+}
+```
+increase whitespace padding to the left of sibling paragraphs
+
+Apply to a class
+```
+p.summary {
+  font-weight: bold;
+}
+```
+This will apply to a paragraph with the class summary
+
+Apply based on ID
+```
+#physics {
+  border-left: solid 1em purple;
+}
+```
+
+Apply based on attributes (applies to everything with a certain attribute)
+```
+p[class='summary'] {
+  color: red;
+}
+```
+
+Pseudo selector
+CSS also defines a significant list of pseudo selectors which select based on positional relationships, mouse interactions, hyperlink visitation states, and attributes. We will give just one example. Suppose we want our purple highlight bar to appear only when the mouse hovers over the text. To accomplish this we can change our ID selector to select whenever a section is hovered over.
+```
+section:hover {
+  border-left: solid 1em purple;
+}
+```
+
+Property	          Value	                              Example	              Discussion
+background-color	  color	                               red	                Fill the background color
+border	            color width style                  	#fad solid medium	    Sets the border using shorthand where any or all of the                                                                                    values may be provided
+border-radius	      unit	                              50%	                  The size of the border radius
+box-shadow	        x-offset y-offset blu-radius color	2px 2px 2px gray	    Creates a shadow
+columns	            number	                            3                     Number of textual columns
+column-rule	        color width style	                  solid thin black	    Sets the border used between columns using border shorthand
+color	              color	                              rgb(128, 0, 0)	      Sets the text color
+cursor	            type	                              grab	                Sets the cursor to display when hovering over the element
+display	            type	                              none	                Defines how to display the element and its children
+filter	            filter-function	                    grayscale(30%)	      Applies a visual filter
+float	              direction	                          right	                Places the element to the left or right in the flow
+flex			                                                                    Flex layout. Used for responsive design
+font	              family size style	                  Arial 1.2em bold	    Defines the text font using shorthand
+grid			                                                                    Grid layout. Used for responsive design
+height	            unit	                              .25em	                Sets the height of the box
+margin	            unit	                              5px 5px 0 0	          Sets the margin spacing
+max-[width/height]	unit	                              20%	                  Restricts the width or height to no more than the unit
+min-[width/height]	unit	                              10vh	                Restricts the width or height to no less than the unit
+opacity	            number	                            .9	                  Sets how opaque the element is
+overflow	          [visible/hidden/scroll/auto]	      scroll	              Defines what happens when the content does not fix in its                                                                                  box
+position	          [static/relative/absolute/sticky]	  absolute	            Defines how the element is positioned in the document
+padding	            unit	                              1em 2em	              Sets the padding spacing
+left	              unit	                              10rem	                The horizontal value of a positioned element
+text-align	        [start/end/center/justify]	        end	                  Defines how the text is aligned in the element
+top	                unit	                              50px	                The vertical value of a positioned element
+transform	          transform-function	                rotate(0.5turn)	      Applies a transformation to the element
+width	              unit	                              25vmin	              Sets the width of the box
+z-index	            number	                            100	                  Controls the positioning of the element on the z axis
+
+Units
+Unit	  Description
+px	    The number of pixels
+pt	    The number of points (1/72 of an inch)
+in	    The number of inches
+cm    	The number of centimeters
+%	      A percentage of the parent element
+em	    A multiplier of the width of the letter m in the parent's font
+rem    	A multiplier of the width of the letter m in the root's font
+ex	    A multiplier of the height of the element's font
+vw	    A percentage of the viewport's width
+vh	    A percentage of the viewport's height
+vmin  	A percentage of the viewport's smaller dimension
+vmax	  A percentage of the viewport's larger dimension
+
+Colors
+Method	      Example	                      Description
+keyword	      red	                          A set of predefined colors (e.g. white, cornflowerblue, darkslateblue)
+RGB           hex	#00FFAA22 or #0FA2	      Red, green, and blue as a hexadecimal number, with an optional alpha opacity
+RGB function	rgb(128, 255, 128, 0.5)	      Red, green, and blue as a percentage or number between 0 and 255, with an optional alpha                                                   opacity percentage
+HSL	          hsl(180, 30%, 90%, 0.5)	      Hue, saturation, and light, with an optional opacity percentage. Hue is the position on the                                                365 degree color wheel (red is 0 and 255). Saturation is how gray the color is, and                                                      light is how bright the color is.
+
+CSS fonts
+4 major font families: serif, sans-serif, fixed, and symbol
+
+for custom fonts, import them and they'll be hosted on your server
+```
+@font-face {
+  font-family: 'Quicksand';
+  src: url('https://cs260.click/fonts/quicksand.woff2');
+}
+
+p {
+  font-family: Quicksand;
+}
+```
+
+or if you want to use open source fonts from, for example, Google, just import the link and the CSS will generate in
+```
+@import url('https://fonts.googleapis.com/css2?family=Rubik Microbe&display=swap');
+
+p {
+  font-family: 'Rubik Microbe';
+}
+```
+
+CSS to animate
+
+Specify that you're animating certain elements with animation-name that will be used to determine the keyframes
+```
+p {
+  text-align: center;
+  font-size: 20vh;
+
+  animation-name: demo;
+  animation-duration: 3s;
+}
+```
+
+Just need to define keypoints -- not everything that happens during the animation
+```
+@keyframes demo {
+  from {
+    font-size: 0vh;
+  }
+
+  to {
+    font-size: 20vh;
+  }
+}
+```
+
+This will make it bounce out a little bigger than its final size by making that happen 95% of the way through the animation
+```
+@keyframes demo {
+  from {
+    font-size: 0vh;
+  }
+
+  95% {
+    font-size: 21vh;
+  }
+
+  to {
+    font-size: 20vh;
+  }
+}
+```
+
+CSS display property
+Allows you to change how the HTML elements appear in a browser
+
+Value	  Meaning
+none  	Don't display this element. The element still exists, but the browser will not render it.
+block  	Display this element with a width that fills its parent element. A p or div element has block display by default.
+inline	Display this element with a width that is only as big as its content. A b or span element has inline display by default.
+flex	  Display this element's children in a flexible orientation.
+grid	  Display this element's children in a grid orientation.
+
+This initial HTML
+```
+<div class="none">None</div>
+<div class="block">Block</div>
+<div class="inline">Inline1</div>
+<div class="inline">Inline2</div>
+<div class="flex">
+  <div>FlexA</div>
+  <div>FlexB</div>
+  <div>FlexC</div>
+  <div>FlexD</div>
+</div>
+<div class="grid">
+  <div>GridA</div>
+  <div>GridB</div>
+  <div>GridC</div>
+  <div>GridD</div>
+</div>
+```
+
+Changes a lot in appearance when we add CSS
+```
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+```
+
+Put this in the `head` of your HTML so scaling down stuff doesn't get messy
+`<meta name="viewport" content="width=device-width,initial-scale=1" />`
+
+Float
+`float` can be used to wrap text. As an example, here's an aside element that has text that wraps around it
+
+```
+aside {
+  float: right;
+  padding: 3em;
+  margin: 0.5em;
+  border: black solid thin;
+}
+```
+
+`@media` detects the size and orientation of the device and can change the CSS to accomadate it
+```
+@media (orientation: portrait) {
+  aside {
+    display: none;
+  }
+}
+```
+
+Grids
+the original HTML
+```
+<div class="container">
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+</div>
+```
+and the CSS for a grid
+```
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  grid-gap: 1em;
+}
+```
+
+https://codepen.io/leesjensen/pen/JjZavjW
+^^major Bootstrap functionality
+
+`*` will apply the thing you want to everything in the document
+For example, 
+```
+* {
+  font-family: sans-serif
+}
+```
+will make all the text sans serif
+
