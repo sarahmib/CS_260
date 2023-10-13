@@ -30,51 +30,51 @@ A hyperlink is done with an `a` element that has an href attribute (hyperlink re
 HTML defines a header that tells the browser the type and version of the document. Always include this at the top of an HTML file  
 `<!DOCTYPE html>`  
 
-element	      meaning
-html	        The page container
-head	        Header information
-title	        Title of the page
-meta	        Metadata for the page such as character set or viewport settings
-script	      JavaScript reference. Either a external reference, or inline
-include	      External content reference
-body	        The entire content body of the page
-header	      Header of the main content
-footer	      Footer of the main content
-nav	          Navigational inputs
-main	        Main content of the page
-section	      A section of the main content
-aside	        Aside content from the main content
-div	          A block division of content
-span	        An inline span of content
-h<1-9>	      Text heading. From h1, the highest level, down to h9, the lowest level
-p	            A paragraph of text
-b	            Bring attention
-table	        Table
-tr	          Table row
-th	          Table header
-td	          Table data
-ol,ul	        Ordered or unordered list
-li	          List item
-a	            Anchor the text to a hyperlink
-img	          Graphical image reference
-dialog	      Interactive component such as a confirmation
-form	        A collection of user input
-input	        User input field
-audio         Audio content
-video	        Video content
-svg	          Scalable vector graphic content
-iframe	      Inline frame of another HTML page
+element	      meaning <br>
+html	        The page container<br>
+head	        Header information<br>
+title	        Title of the page<br>
+meta	        Metadata for the page such as character set or viewport settings<br>
+script	      JavaScript reference. Either a external reference, or inline<br>
+include	      External content reference<br>
+body	        The entire content body of the page<br>
+header	      Header of the main content<br>
+footer	      Footer of the main content<br>
+nav	          Navigational inputs<br>
+main	        Main content of the page<br>
+section	      A section of the main content<br>
+aside	        Aside content from the main content<br>
+div	          A block division of content<br>
+span	        An inline span of content<br>
+h<1-9>	      Text heading. From h1, the highest level, down to h9, the lowest level<br>
+p	            A paragraph of text<br>
+b	            Bring attention<br>
+table	        Table<br>
+tr	          Table row<br>
+th	          Table header<br>
+td	          Table data<br>
+ol,ul	        Ordered or unordered list<br>
+li	          List item<br>
+a	            Anchor the text to a hyperlink<br>
+img	          Graphical image reference<br>
+dialog	      Interactive component such as a confirmation<br>
+form	        A collection of user input<br>
+input	        User input field<br>
+audio         Audio content<br>
+video	        Video content<br>
+svg	          Scalable vector graphic content<br>
+iframe	      Inline frame of another HTML page<br>
 
 Comments start with `<!--` and end with `-->`
 
 HTML reserves a few characters for format definition. `>`, for example. To just type the character itself, you have to use entity syntax
 
-Character	  Entity
-&	          &amp;
-<	          &lt;
->	          &gt;
-"	          &quot;
-'	          &apos;
+Character	  Entity<br>
+&	          &amp;<br>
+<	          &lt;<br>
+>	          &gt;<br>
+"	          &quot;<br>
+'	          &apos;<br>
 
 Entity syntax can represent any unicode character
 
@@ -142,17 +142,17 @@ The style attribute can style width and height, or you can use the width/height 
 
 Elements for accepting user input data
 
-Element	    Meaning	                              Example
-form	      Input container and submission	      <form action="form.html" method="post">
-fieldset	  Labeled input grouping	              <fieldset> ... </fieldset>
-input	      Multiple types of user input	        <input type="" />
-select	    Selection dropdown	                  <select><option>1</option></select>
-optgroup	  Grouped selection dropdown	          <optgroup><option>1</option></optgroup>
-option	    Selection option	                    <option selected>option2</option>
-textarea	  Multiline text input	                <textarea></textarea>
-label	      Individual input label	              <label for="range">Range: </label>
-output	    Output of input	                      <output for="range">0</output>
-meter	      Display value with a known range	    <meter min="0" max="100" value="50"></meter>
+Element	    Meaning	                              Example<br>
+form	      Input container and submission	      <form action="form.html" method="post"><br>
+fieldset	  Labeled input grouping	              <fieldset> ... </fieldset><br>
+input	      Multiple types of user input	        <input type="" /><br>
+select	    Selection dropdown	                  <select><option>1</option></select><br>
+optgroup	  Grouped selection dropdown	          <optgroup><option>1</option></optgroup><br>
+option	    Selection option	                    <option selected>option2</option><br>
+textarea	  Multiline text input	                <textarea></textarea><br>
+label	      Individual input label	              <label for="range">Range: </label><br>
+output	    Output of input	                      <output for="range">0</output><br>
+meter	      Display value with a known range	    <meter min="0" max="100" value="50"></meter><br>
 
 The main purpose of the form element is to submit the value of the input it contains. With advancements in JavaScript, it's become less vital, but is often still used as a container
 
@@ -170,33 +170,33 @@ The submit button sends this data to the server `ta-id=Some+text` by combining t
 
 Types of the input element, done with the `type` attribute
 
-Type	          Meaning
-text	          Single line textual value
-password	      Obscured password
-email	          Email address
-tel	            Telephone number
-url	            URL address
-number	        Numerical value
-checkbox	      Inclusive selection
-radio	          Exclusive selection
-range	          Range limited number
-date	          Year, month, day
-datetime-local	Date and time
-month	          Year, month
-week	          Week of year
-color	          Color
-file	          Local file
-submit	        button to trigger form submission
+Type	          Meaning<br>
+text	          Single line textual value<br>
+password	      Obscured password<br>
+email	          Email address<br>
+tel	            Telephone number<br>
+url	            URL address<br>
+number	        Numerical value<br>
+checkbox	      Inclusive selection<br>
+radio	          Exclusive selection<br>
+range	          Range limited number<br>
+date	          Year, month, day<br>
+datetime-local	Date and time<br>
+month	          Year, month<br>
+week	          Week of year<br>
+color	          Color<br>
+file	          Local file<br>
+submit	        button to trigger form submission<br>
 
 Example of a checked radio button `<label for="checkbox1">Check me</label> <input type="checkbox" name="varCheckbox" value="checkbox1" checked />`
 
 Most input elements share common attributes
 
-Attribute	    Meaning  
-name	        The name of the input. This is submitted as the name of the input if used in a form  
-disabled	    Disables the ability for the user to interact with the input  
-value        	The initial value of the input  
-required    	Signifies that a value is required in order to be valid  
+Attribute	    Meaning  <br>
+name	        The name of the input. This is submitted as the name of the input if used in a form  <br>
+disabled	    Disables the ability for the user to interact with the input  <br>
+value        	The initial value of the input  <br>
+required    	Signifies that a value is required in order to be valid  <br>
 
 Many input elements have validation built in -- for example, an input with the url attribute won't accept something that's not a url
 You can specify the required attribute
@@ -293,11 +293,11 @@ section h2 {
 ```
 for example, this changes h2 headings, but only ones contained within section tags
 
-Combinator	        Meaning	                      Example	        Description
-Descendant	        A list of descendants	        body section	  Any section that is a descendant of a body
-Child	              A list of direct children	    section > p	    Any p that is a direct child of a section
-General sibling	    A list of siblings	          p ~ div	        Any p that has a div sibling
-Adjacent sibling	  A list of adjacent sibling	  p + div         Any p that has an adjacent div sibling
+Combinator	        Meaning	                      Example	        Description<br>
+Descendant	        A list of descendants	        body section	  Any section that is a descendant of a body<br>
+Child	              A list of direct children	    section > p	    Any p that is a direct child of a section<br>
+General sibling	    A list of siblings	          p ~ div	        Any p that has a div sibling<br>
+Adjacent sibling	  A list of adjacent sibling	  p + div         Any p that has an adjacent div sibling<br>
 
 ex.
 ```
@@ -337,57 +337,57 @@ section:hover {
 }
 ```
 
-Property	          Value	                              Example	              Discussion
-background-color	  color	                               red	                Fill the background color
-border	            color width style                  	#fad solid medium	    Sets the border using shorthand where any or all of the                                                                                    values may be provided
-border-radius	      unit	                              50%	                  The size of the border radius
-box-shadow	        x-offset y-offset blu-radius color	2px 2px 2px gray	    Creates a shadow
-columns	            number	                            3                     Number of textual columns
-column-rule	        color width style	                  solid thin black	    Sets the border used between columns using border shorthand
-color	              color	                              rgb(128, 0, 0)	      Sets the text color
-cursor	            type	                              grab	                Sets the cursor to display when hovering over the element
-display	            type	                              none	                Defines how to display the element and its children
-filter	            filter-function	                    grayscale(30%)	      Applies a visual filter
-float	              direction	                          right	                Places the element to the left or right in the flow
-flex			                                                                    Flex layout. Used for responsive design
-font	              family size style	                  Arial 1.2em bold	    Defines the text font using shorthand
-grid			                                                                    Grid layout. Used for responsive design
-height	            unit	                              .25em	                Sets the height of the box
-margin	            unit	                              5px 5px 0 0	          Sets the margin spacing
-max-[width/height]	unit	                              20%	                  Restricts the width or height to no more than the unit
-min-[width/height]	unit	                              10vh	                Restricts the width or height to no less than the unit
-opacity	            number	                            .9	                  Sets how opaque the element is
-overflow	          [visible/hidden/scroll/auto]	      scroll	              Defines what happens when the content does not fix in its                                                                                  box
-position	          [static/relative/absolute/sticky]	  absolute	            Defines how the element is positioned in the document
-padding	            unit	                              1em 2em	              Sets the padding spacing
-left	              unit	                              10rem	                The horizontal value of a positioned element
-text-align	        [start/end/center/justify]	        end	                  Defines how the text is aligned in the element
-top	                unit	                              50px	                The vertical value of a positioned element
-transform	          transform-function	                rotate(0.5turn)	      Applies a transformation to the element
-width	              unit	                              25vmin	              Sets the width of the box
-z-index	            number	                            100	                  Controls the positioning of the element on the z axis
+Property	          Value	                              Example	              Discussion<br>
+background-color	  color	                               red	                Fill the background color<br>
+border	            color width style                  	#fad solid medium	    Sets the border using shorthand where any or all of the                                                                                    values may be provided<br>
+border-radius	      unit	                              50%	                  The size of the border radius<br>
+box-shadow	        x-offset y-offset blu-radius color	2px 2px 2px gray	    Creates a shadow<br>
+columns	            number	                            3                     Number of textual columns<br>
+column-rule	        color width style	                  solid thin black	    Sets the border used between columns using border shorthand<br>
+color	              color	                              rgb(128, 0, 0)	      Sets the text color<br>
+cursor	            type	                              grab	                Sets the cursor to display when hovering over the element<br>
+display	            type	                              none	                Defines how to display the element and its children<br>
+filter	            filter-function	                    grayscale(30%)	      Applies a visual filter<br>
+float	              direction	                          right	                Places the element to the left or right in the flow<br>
+flex			                                                                    Flex layout. Used for responsive design<br>
+font	              family size style	                  Arial 1.2em bold	    Defines the text font using shorthand<br>
+grid			                                                                    Grid layout. Used for responsive design<br>
+height	            unit	                              .25em	                Sets the height of the box<br>
+margin	            unit	                              5px 5px 0 0	          Sets the margin spacing<br>
+max-[width/height]	unit	                              20%	                  Restricts the width or height to no more than the unit<br>
+min-[width/height]	unit	                              10vh	                Restricts the width or height to no less than the unit<br>
+opacity	            number	                            .9	                  Sets how opaque the element is<br>
+overflow	          [visible/hidden/scroll/auto]	      scroll	              Defines what happens when the content does not fix in its                                                                                  box<br>
+position	          [static/relative/absolute/sticky]	  absolute	            Defines how the element is positioned in the document<br>
+padding	            unit	                              1em 2em	              Sets the padding spacing<br>
+left	              unit	                              10rem	                The horizontal value of a positioned element<br>
+text-align	        [start/end/center/justify]	        end	                  Defines how the text is aligned in the element<br>
+top	                unit	                              50px	                The vertical value of a positioned element<br>
+transform	          transform-function	                rotate(0.5turn)	      Applies a transformation to the element<br>
+width	              unit	                              25vmin	              Sets the width of the box<br>
+z-index	            number	                            100	                  Controls the positioning of the element on the z axis<br>
 
 Units
-Unit	  Description
-px	    The number of pixels
-pt	    The number of points (1/72 of an inch)
-in	    The number of inches
-cm    	The number of centimeters
-%	      A percentage of the parent element
-em	    A multiplier of the width of the letter m in the parent's font
-rem    	A multiplier of the width of the letter m in the root's font
-ex	    A multiplier of the height of the element's font
-vw	    A percentage of the viewport's width
-vh	    A percentage of the viewport's height
-vmin  	A percentage of the viewport's smaller dimension
-vmax	  A percentage of the viewport's larger dimension
+Unit	  Description<br>
+px	    The number of pixels<br>
+pt	    The number of points (1/72 of an inch)<br>
+in	    The number of inches<br>
+cm    	The number of centimeters<br>
+%	      A percentage of the parent element<br>
+em	    A multiplier of the width of the letter m in the parent's font<br>
+rem    	A multiplier of the width of the letter m in the root's font<br>
+ex	    A multiplier of the height of the element's font<br>
+vw	    A percentage of the viewport's width<br>
+vh	    A percentage of the viewport's height<br>
+vmin  	A percentage of the viewport's smaller dimension<br>
+vmax	  A percentage of the viewport's larger dimension<br>
 
 Colors
-Method	      Example	                      Description
-keyword	      red	                          A set of predefined colors (e.g. white, cornflowerblue, darkslateblue)
-RGB           hex	#00FFAA22 or #0FA2	      Red, green, and blue as a hexadecimal number, with an optional alpha opacity
-RGB function	rgb(128, 255, 128, 0.5)	      Red, green, and blue as a percentage or number between 0 and 255, with an optional alpha                                                   opacity percentage
-HSL	          hsl(180, 30%, 90%, 0.5)	      Hue, saturation, and light, with an optional opacity percentage. Hue is the position on the                                                365 degree color wheel (red is 0 and 255). Saturation is how gray the color is, and                                                      light is how bright the color is.
+Method	      Example	                      Description<br>
+keyword	      red	                          A set of predefined colors (e.g. white, cornflowerblue, darkslateblue)<br>
+RGB           hex	#00FFAA22 or #0FA2	      Red, green, and blue as a hexadecimal number, with an optional alpha opacity<br>
+RGB function	rgb(128, 255, 128, 0.5)	      Red, green, and blue as a percentage or number between 0 and 255, with an optional alpha                                                   opacity percentage<br>
+HSL	          hsl(180, 30%, 90%, 0.5)	      Hue, saturation, and light, with an optional opacity percentage. Hue is the position on the                                                365 degree color wheel (red is 0 and 255). Saturation is how gray the color is, and                                                      light is how bright the color is.<br>
 
 CSS fonts
 4 major font families: serif, sans-serif, fixed, and symbol
@@ -460,11 +460,11 @@ CSS display property
 Allows you to change how the HTML elements appear in a browser
 
 Value	  Meaning
-none  	Don't display this element. The element still exists, but the browser will not render it.
-block  	Display this element with a width that fills its parent element. A p or div element has block display by default.
-inline	Display this element with a width that is only as big as its content. A b or span element has inline display by default.
-flex	  Display this element's children in a flexible orientation.
-grid	  Display this element's children in a grid orientation.
+none  	Don't display this element. The element still exists, but the browser will not render it.<br>
+block  	Display this element with a width that fills its parent element. A p or div element has block display by default.<br>
+inline	Display this element with a width that is only as big as its content. A b or span element has inline display by default.<br>
+flex	  Display this element's children in a flexible orientation.<br>
+grid	  Display this element's children in a grid orientation.<br>
 
 This initial HTML
 ```
