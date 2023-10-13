@@ -572,3 +572,61 @@ For example,
 ```
 will make all the text sans serif
 
+### JavaScript
+console.log() is JS's built-in function that outputs stuff to the debugger console
+Function ex in JS
+```
+function join(a, b) {
+  return a + ' ' + b;
+}
+
+console.log(join('Hello', 'world'));
+```
+
+The console object in JS is useful for debugging
+
+create formatted messages in the console `console.log('hello %s', 'world');`
+can specify CSS declarations to style the log box `console.log('%c JavaScript Demo', 'font-size:1.5em; color:green;');`
+
+To see how long a piece of code is, us `time` and `timeEnd`. It'll output the amount of time between the two were called
+```
+console.time('demo time');
+// ... some code that takes a long time.
+console.timeEnd('demo time');
+// OUTPUT: demo time: 9762.74 ms
+```
+
+see how many times a block of code was called
+```
+console.count('a');
+// OUTPUT: a: 1
+console.count('a');
+// OUTPUT: a: 2
+console.count('b');
+// OUTPUT: b: 1
+```
+
+Insert JS into HTML either by using the script src attribute or by including it directly in the `<script>` HTML element
+
+index.js
+```
+function sayHello() {
+  console.log('hello');
+}
+```
+
+index.html
+```
+<head>
+  <script src="javascript.js"></script>
+</head>
+<body>
+  <button onclick="sayHello()">Say Hello</button>
+  <button onclick="sayGoodbye()">Say Goodbye</button>
+  <script>
+    function sayGoodbye() {
+      alert('Goodbye');
+    }
+  </script>
+</body>
+```
