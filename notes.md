@@ -630,3 +630,180 @@ index.html
   </script>
 </body>
 ```
+Declare variables using `let` or `const`
+
+JS primitive types
+Type	    Meaning
+Null	    The type of a variable that has not been assigned a value.
+Undefined	The type of a variable that has not been defined.
+Boolean	  True or false.
+Number	  A 64 bit signed number.
+BigInt	  A number of arbitrary magnitude.
+String	  A textual sequence of characters.
+Symbol	  A unique value.
+
+JS doesn't force you to define a variable before using it, so it's possible to have undefined variables
+
+JS object types
+Type	    Use	                                                                                      Example
+Object	  A collection of properties represented by name value pairs. Values can be of any type.	  {a:3, b:'fish'}
+Function	An object that has the ability to be called.	                                            function a() {}
+Date	    Calendar dates and times.	                                                                new Date('1995-12-17')
+Array	    An ordered sequence of any type.	                                                        [3, 'fish']
+Map	      A collection of key value pairs that support efficient lookups.	                          new Map()
+JSON	    A lightweight data-interchange format used to share information across programs.	        {"a":3, "b":"fish"}
+
+=== is equality
+!== is inequality
+
+Weakly typed - the variable has a type, but that type can be changed when the variable is assigned something else
+
+`if` `else` and `else if` are supported in JS
+```
+if (a === 1) {
+  //...
+} else if (b === 2) {
+  //...
+} else {
+  //...
+}
+```
+The ternary operator provides a shortened if/else syntax
+`a === 1 ? console.log(1) : console.log('not 1');`
+
+&&, ||, and ! all supported
+
+Supported loop types: `for`, `for in`, `for of`, `while`, `do while`, and `switch`
+
+`for in` vs `for of`
+
+`for in` iterates over an iterable's *property names*
+```
+const arr = ['a', 'b'];
+for (const name in arr) {
+  console.log(name);
+}
+// OUTPUT: 0
+// OUTPUT: 1
+```
+for arrays, that is the array index, so it will not return the element in the index itself
+
+'for of' iterates over an iterable's *values*
+```
+const arr = ['a', 'b'];
+for (const val of arr) {
+  console.log(val);
+}
+// OUTPUT: 'a'
+// OUTPUT: 'b'
+```
+
+strings with `"` or `'` are just regular strings, and ``` defines a string literal that might contain JS that's concatenated into the string
+```
+'quoted text'; // " also works
+
+const l = 'literal';
+console.log(`string ${l + (1 + 1)} text`);
+// OUTPUT: string literal2 text
+```
+
+String functions
+Function	      Meaning
+length	        The number of characters in the string
+indexOf()	      The starting index of a given substring
+split()	        Split the string into an array on the given delimiter string
+startsWith()	  True if the string has a given prefix
+endsWith()	    True if the string has a given suffix
+toLowerCase()	  Converts all characters to lowercase
+
+JS functions
+```
+function hello(who) {
+  return 'hello ' + who;
+}
+
+console.log(hello('world'));
+// OUTPUT: hello world
+```
+Return type is automatically inferred by the assignment of the value to the parameter
+
+Caller can choose what parameters to provide when calling a function, so some parameters may be undefined
+```
+function labeler(value, title = 'title') {
+  console.log(`${title}=${value}`);
+}
+
+labeler();
+// OUTPUT: title=undefined
+
+labeler('fish');
+// OUTPUT: title=fish
+
+labeler('fish', 'animal');
+// OUTPUT: animal=fish
+```
+Can define functions anonymouslty
+
+```
+// Function that takes a function as a parameter
+function doMath(operation, a, b) {
+  return operation(a, b);
+}
+
+// Anonymous function assigned to a variable
+const add = function (a, b) {
+  return a + b;
+};
+
+console.log(doMath(add, 5, 3));
+// OUTPUT: 8
+
+// Anonymous function assigned to a parameter
+console.log(
+  doMath(
+    function (a, b) {
+      return a - b;
+    },
+    5,
+    3
+  )
+);
+// OUTPUT: 2
+```
+
+Functions can be created within functions
+
+Arrow syntax like in Dart is also in JS
+Arrow functions can't be used for constructors or iterator generators
+
+Return with arrow
+```
+() => 3;
+// RETURNS: 3
+
+() => {
+  3;
+};
+// RETURNS: undefined
+
+() => {
+  return 3;
+};
+// RETURNS: 3
+```
+
+array functions
+Function	  Meaning	                                                      Example
+push	      Add an item to the end of the array	                          a.push(4)
+pop	        Remove an item from the end of the array	                    x = a.pop()
+slice	      Return a sub-array	                                          a.slice(1,-1)
+sort	      Run a function to sort an array in place	                    a.sort((a,b) => b-a)
+values	    Creates an iterator for use with a for of loop	              for (i of a.values()) {...}
+find	      Find the first item satisfied by a test function	            a.find(i => i < 2)
+forEach	    Run a function on each array item	                            a.forEach(console.log)
+reduce	    Run a function to reduce each array item to a single item	    a.reduce((a, c) => a + c)
+map	        Run a function to map an array to a new array	                a.map(i => i+i)
+filter	    Run a function to remove items	                              a.filter(i => i%2)
+every	      Run a function to test if all items match	                    a.every(i => i < 3)
+some	      Run a function to test if any items match	                    a.some(i => 1 < 1)
+
