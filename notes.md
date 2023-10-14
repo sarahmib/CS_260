@@ -807,3 +807,4 @@ filter	    Run a function to remove items	                              a.filter
 every	      Run a function to test if all items match	                    a.every(i => i < 3)
 some	      Run a function to test if any items match	                    a.some(i => 1 < 1)
 
+Convert to and from JSON using `JSON.parse` and `JSON.stringify`
