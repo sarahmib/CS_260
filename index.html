@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <title>Share the Day</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body>
     
@@ -21,24 +23,29 @@
     </header>
 
     <main>
-      <h1>Welcome</h1>
+      <h2>Welcome</h2>
       <p>Login to access your calendar</p>
       <form method="get" action="calendar.html">
+        <span>
         <label for="name">Calendar name</label>
         <input type="text" id="name" placeholder="Your calendar name" />
+        </span>
         <br>
+        <span>
         <label for="password">Password</label>
         <input type="text" id="password" placeholder="Password" />
+        </span>
         <br>
-        <button type="submit">Login</button>
+        <span>
+        <button type="submit" id="login">Login</button>
+        </span>
       </form>
     </main>
 
     <footer>
-      <hr />
-      <span class="text-reset">Author</span>
-      <br />
-      <a href="https://github.com/sarahmib/CS_260">GitHub</a>
+      <br>
+      <span class="text-reset" id="author">Author</span>
+      <a href="https://github.com/sarahmib/CS_260" id="a_link">GitHub</a>
     </footer>
   </body>
 </html>
