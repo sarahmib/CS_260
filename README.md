@@ -38,3 +38,13 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
 - Login - Input box and submit button for login.<br>
 - Database - The event information and comments represent what will be pulled from the database.<br>
 - WebSocket - Events and comments displayed will also be updated live.<br>
+
+## CSS deliverable
+For this deliverable I properly styled the application into its final appearance.
+
+Header, footer, and main content body
+Navigation elements - I styled them into the layout and appearance I wanted
+Responsive to window resizing - My app responds to size changes in the desired way
+Application elements - Use of contrast and whitespace
+Application text content - Consistent fonts
+Application images - Finalized the layout of the month's icon
