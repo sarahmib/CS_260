@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Submit an event</title>
+    <link rel="stylesheet" type="text/css" href="submit_event.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
 <body>
@@ -21,11 +22,11 @@
     <h3>Submit an event</h3>
 
     <form method="get">
-        Event name: 
+        <div>Event name: </div>
         <label for="event name"></label>
         <input type="text" id="event name" placeholder="Event" />
 
-        Event date: 
+        <div>Event date: </div>
         <label for="event month"></label>
         <select id="event month">
             <option>January</option>
@@ -87,7 +88,7 @@
         </select>
 
         <br>
-        Event time:
+        <div>Event time:</div>
         <label for="event hour"></label>
         <select id="event hour">
             <option>1</option>
@@ -125,11 +126,11 @@
             <option>PM</option>
         </select>
 
-        Event location:
+        <div>Event location:</div>
         <label for="event place"></label>
         <input type="text" id="event place" placeholder="Location of event" />
 
-        Notes:
+        <div>Notes:</div>
         <label for="notes"></label>
         <textarea id="notes" name="notes"></textarea>
         <br>
