@@ -1,0 +1,104 @@
+* {
+    font-family: sans-serif
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 2em;
+    color: #696F73;
+    padding-left: 2.5em;
+    padding-top: 0.75em;
+    padding-bottom: 0em;
+}
+
+li {
+    display: inline-block;
+    padding: 1em 20px;
+    font-size: 16px;
+    background-color: #1D3B4D;
+    border: none;
+    border-radius: 5px;
+    cursor: text;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-height: 500px) {
+    header {
+        display: none;
+    }
+}
+
+#whose_calendar {
+    padding-top: 5px;
+    color: #444749;
+    position: relative;
+    display: flex;
+    left: 22vw;
+    align-items: flex-end;
+}
+
+h3 {
+    position: relative;
+    left: 3vw;
+    color: #444749;
+}
+
+span {
+    position: relative;
+    left: 3vw;
+    padding: 3px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    background-color: #1D3B4D;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin-top: 3px;
+    position: relative;
+}
+
+form {
+    position: relative;
+    left: 3vw;
+}
+
+table {
+    justify-content: center;
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+table td {
+    height: 100px;
+}
+
+#month {
+    color:#444749;
+    margin: 0; 
+    margin-right: 10px;
+}
+
+#calendar {
+    position: relative;
+    margin-top: auto;
+}
