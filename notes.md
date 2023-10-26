@@ -572,7 +572,7 @@ For example,
 ```
 will make all the text sans serif
 
-### JavaScript
+# JavaScript
 console.log() is JS's built-in function that outputs stuff to the debugger console
 Function ex in JS
 ```
@@ -1022,3 +1022,134 @@ p.#name = 'Lie';
 Make properties and functions private with #
 
 Classes can be extended using `extends`. Use `super` to access the superclass
+
+`this`
+
+Global - When this is referenced outside a function or object it refers to the globalThis object. The globalThis object represents the context for runtime environment. For example, when running in a browser, globalThis refers to the browser's window object.
+Function - When this is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running in JavaScript strict mode, a global function's this variable is undefined instead of globalThis.
+Object - When this is referenced in an object it refers to the object.
+
+Common JSModules are imported with Node.js. ES modules are modules built into JS
+
+Because modules create a file-based scope for the code they represent, you must explicitly export the objects from one file and then import them into another file
+
+```
+export function alertDisplay(msg) {
+  alert(msg);
+}
+```
+
+```
+import { alertDisplay } from './alert.js';
+
+alertDisplay('called from main.js');
+```
+
+From your HTML, you can specify that you are using an ES module by including a type attribute with the value of module in the script element. You can then import and use other modules. This is shown in the example below.
+
+```
+<script type="module">
+  import { alertDisplay } from './alert.js';
+  alertDisplay('module loaded');
+</script>
+```
+
+If we want to use a module in the global scope that our HTML or other non-module JavaScript is executing in, then we must leak it into the global scope. We do this by either attaching an event handler or explicitly adding a function to the global window object. In the example below, we expose the alertDisplay imported module function by attaching it to the global JavaScript window object so that it can then be called from the button onclick handler. We also expose the module function by attaching a keypress event.
+
+```
+<html>
+  <body>
+    <script type="module">
+      import { alertDisplay } from './alert.js';
+      window.btnClick = alertDisplay;
+
+      document.body.addEventListener('keypress', function (event) {
+        alertDisplay('Key pressed');
+      });
+    </script>
+    <button onclick="btnClick('button clicked')">Press me</button>
+  </body>
+</html>
+```
+
+If the button is pressed, now the module function will be called
+
+Don't usually have to differentiate between ES scope and global
+
+Document Object Model (DOM) is an object representation of HTML elements that the browser uses to render the display
+
+Browser also exposes the DOM to external code so you can dynamically change the HTML
+
+Browser provides access to DOM through the global variable `document` that points to the root element of the DOM
+If you open a browser's debugger console and type `document`, you'll see the DOM for the file that the page is currently rendering
+
+For everything in an HTML document, there's a node in the DOM
+
+Every element in an HTML document implements the DOM Element interface, which is derived from the DOM Node interface. The DOM Element Interface provides the means for iterating child elements, accessing the parent element, and manipulating the element's attributes. From your JavaScript code, you can start with the `document` variable and walk through the every element in the tree.
+
+```
+function displayElement(el) {
+  console.log(el.tagName);
+  for (const child of el.children) {
+    displayElement(child);
+  }
+}
+
+displayElement(document);
+```
+
+ou can provide a CSS selector to the `querySelectorAll` function in order to select elements from the document. The `textContent` property contains all of the element's text. You can even access a textual representation of an element's HTML content with the `innerHTML` property.
+
+```
+const listElements = document.querySelectorAll('p');
+for (const el of listElements) {
+  console.log(el.textContent);
+}
+```
+
+DOM supports ability to insert, modify, or delete elements. To create an element, first create it on the DOM document, then insert the element by appending it to an existing element on the DOM tree
+
+```
+function insertChild(parentSelector, text) {
+  const newChild = document.createElement('div');
+  newChild.textContent = text;
+
+  const parentElement = document.querySelector(parentSelector);
+  parentElement.appendChild(newChild);
+}
+
+insertChild('#courses', 'new course');
+```
+
+To delete elements, call the `removeChild` function on the parent element
+```
+function deleteElement(elementSelector) {
+  const el = document.querySelector(elementSelector);
+  el.parentElement.removeChild(el);
+}
+
+deleteElement('#courses div');
+```
+
+The DOM also allows you to inject entire blocks of HTML into an element. The following code finds the first div element in the DOM and replaces all the HTML it contains.
+
+```
+const el = document.querySelector('div');
+el.innerHTML = '<div class="injected"><b>Hello</b>!</div>';
+```
+
+If you're injecting HTML, make sure it can't be manipulated by the user. Otherwise it's a way for hackers to get in
+
+All DOM elements support the ability to attach a function that gets called when an event occurs on the element. These functions are called event listeners. Here is an example of an event listener that gets called when an element gets clicked.
+```
+const submitDataEl = document.querySelector('#submitData');
+submitDataEl.addEventListener('click', function (event) {
+  console.log(event.type);
+});
+```
+
+There are lots of possible events that you can add a listener to. This includes things like mouse, keyboard, scrolling, animation, video, audio, WebSocket, and clipboard events. You can see the full list on MDN. Here are a few of the more commonly used events.
+
+You can also add event listeners directly in the HTML. For example, here is a `onclick` handler that is attached to a button.
+`<button onclick='alert("clicked")'>click me</button>`
+
