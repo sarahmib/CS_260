@@ -6,7 +6,8 @@ document.getElementById('eventForm').addEventListener('submit', function (event)
         eventDate: document.getElementById('event month').value + '/' + document.getElementById('event day').value + '/' + document.getElementById('event year').value,
         eventTime: document.getElementById('event hour').value + ':' + document.getElementById('event minute').value + ' ' + document.getElementById('am pm').value,
         eventLocation: document.getElementById('event place').value,
-        notes: document.getElementById('notes').value
+        notes: document.getElementById('notes').value,
+        comments: []
     };
 
     events = JSON.parse(localStorage.getItem("events"));
