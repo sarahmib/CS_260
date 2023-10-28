@@ -98,7 +98,33 @@ table td {
     margin-right: 10px;
 }
 
+#year {
+    color:#444749;
+    margin: 0; 
+    padding-left: 0;
+}
+
 #calendar {
     position: relative;
     margin-top: auto;
 }
+
+input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  textarea, select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
