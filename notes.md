@@ -1153,3 +1153,18 @@ There are lots of possible events that you can add a listener to. This includes 
 You can also add event listeners directly in the HTML. For example, here is a `onclick` handler that is attached to a button.
 `<button onclick='alert("clicked")'>click me</button>`
 
+The browser's localStorage API provides the ability to persistently store and retrieve data (i.e. scores, usernames, etc.,) on a user's browser across user sessions and HTML page renderings. For example, your frontend JavaScript code could store a user's name on one HTML page, and then retrieve the name later when a different HTML page is loaded. The user's name will also be available in local storage the next time the same browser is used to access the same website.
+
+In addition to persisting application data between page renderings, localStorage is also used as a cache for when data cannot be obtained from the server. For example, your frontend JavaScript could store the last high scores obtained from the service, and then display those scores in the future if the service is not available.
+
+four main functions with localStorage
+Function	Meaning
+setItem(name, value)	Sets a named item's value into local storage
+getItem(name)	Gets a named item's value from local storage
+removeItem(name)	Removes a named item from local storage
+clear()	Clears all items in local storage
+
+localStorage must be of type string, boolean, or number. If you want to store an object or array, must store it in JSON and then convert it back with JSON.stringify() and JSON.parse()
+
+Debugging JS
+https://github.com/webprogramming260/.github/blob/main/profile/javascript/debuggingJavascript/debuggingJavascript.md
