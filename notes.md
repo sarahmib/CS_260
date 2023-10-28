@@ -572,7 +572,7 @@ For example,
 ```
 will make all the text sans serif
 
-### JavaScript
+# JavaScript
 console.log() is JS's built-in function that outputs stuff to the debugger console
 Function ex in JS
 ```
@@ -808,3 +808,363 @@ every	      Run a function to test if all items match	                    a.ever
 some	      Run a function to test if any items match	                    a.some(i => 1 < 1)
 
 Convert to and from JSON using `JSON.parse` and `JSON.stringify`
+
+JS regular expressions
+Create a regex using the class constructor, or make a regex literal
+```
+const objRegex = new RegExp('ab*', 'i');
+const literalRegex = /ab*/i;
+```
+
+the `string` class has several functions that accept regex -- `match`, `replace`, `search`, and `split` can all take a regex. `test` returns true if the regex is found in the string
+
+```
+const petRegex = /(dog)|(cat)|(bird)/gim;
+const text = 'Both cats and dogs are pets, but not rocks.';
+
+text.match(petRegex);
+// RETURNS: ['cat', 'dog']
+
+text.replace(petRegex, 'animal');
+// RETURNS: Both animals and animals are pets, but not rocks.
+
+petRegex.test(text);
+// RETURNS: true
+```
+Rest in JS
+
+Prefixing the last argument of a function with 3 periods is the `rest` syntax. It takes all the rest of the inputs and puts it into an array for you. This is useful when you don't know how many parameters will be passed into the function
+```
+function hasNumber(test, ...numbers) {
+  return numbers.some((i) => i === test);
+}
+
+hasNumber(2, 1, 2, 3);
+// RETURNS: true
+```
+This is a function that checks to see if the number `test` is contained within `numbers`
+
+Only the last parameter can be a `rest`
+
+a `spread` does the opposite of `rest`. It takes an iterable like an array and spreads it out into function parameters
+```
+function person(firstName, lastName) {
+  return { first: firstName, last: lastName };
+}
+
+const p = person(...['Ryan', 'Dahl']);
+console.log(p);
+// OUTPUT: {first: 'Ryan', last: 'Dahl'}
+```
+Exceptions are in JS using the `try catch` and `throw` syntax
+`finally` is also supported
+
+```
+function connectDatabase() {
+  throw new Error('connection error');
+}
+
+try {
+  connectDatabase();
+  console.log('never executed');
+} catch (err) {
+  console.log(err);
+} finally {
+  console.log('always executed');
+}
+
+// OUTPUT: Error: connection error
+//         always executed
+```
+
+Fallback
+If the normal feature isn't available, it's common to have a fallback feature
+```
+function getScores() {
+  try {
+    const scores = scoringService.getScores();
+    // store the scores so that we can use them later if the network is not available
+    window.localStorage.setItem('scores', scores);
+    return scores;
+  } catch {
+    return window.localStorage.getItem('scores');
+  }
+}
+```
+
+Destructuring pulls individual items out of an existing larger one
+
+```
+const a = [1, 2, 4, 5];
+
+// destructure the first two items from a, into the new variables b and c
+const [b, c] = a;
+
+console.log(b, c);
+// OUTPUT: 1, 2
+```
+Even though it looks like you're declaring an array with `b` and `c`, you're actually destructuring
+
+Combine multiple using `rest` syntax
+```
+const [b, c, ...others] = a;
+
+console.log(b, c, others);
+// OUTPUT: 1, 2, [4,5]
+```
+When destructuring objects, say specifically what you want to take out
+```
+const o = { a: 1, b: 'animals', c: ['fish', 'cats'] };
+
+const { a, c } = o;
+
+console.log(a, c);
+// OUTPUT 1, ['fish', 'cats']
+```
+
+Default values can also be provided for missing ones
+
+```
+const { a, b = 22 } = {};
+const [c = 44] = [];
+
+console.log(a, b, c);
+// OUTPUT: undefined, 22, 44
+```
+A JavaScript object represents a collection of name value pairs referred to as properties. The property name must be of type String or Symbol, but the value can be of any type. Objects also have common object-oriented functionality such as constructors, a this pointer, static properties and functions, and inheritance.
+
+Objects can be created with the new operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (obj.prop) or bracket notation (obj['prop']).
+
+```
+const obj = new Object({a:3});
+obj['b'] = 'fish';
+obj.c = [1, 2, 3];
+obj.hello = function () {
+  console.log('hello');
+};
+
+console.log(obj);
+// OUTPUT: {a: 3, b: 'fish', c: [1,2,3], hello: func}
+```
+
+can declare with the `object-literal` syntax which allows you to provide the intial composition
+```
+const obj = {
+  a: 3,
+  b: 'fish',
+};
+```
+Object static functions
+Function	  Meaning
+entries	    Returns an array of key value pairs
+keys	      Returns an array of keys
+values	    Returns an array of values
+
+```
+const obj = {
+  a: 3,
+  b: 'fish',
+};
+
+console.log(Object.entries(obj));
+// OUTPUT: [['a', 3], ['b', 'fish']]
+console.log(Object.keys(obj));
+// OUTPUT: ['a', 'b']
+console.log(Object.values(obj));
+// OUTPUT: [3, 'fish']
+```
+
+Any function that returns an object is a constructor and can be invoked with the `new` operator
+```
+function Person(name) {
+  return {
+    name: name,
+  };
+}
+
+const p = new Person('Eich');
+console.log(p);
+// OUTPUT: {name: 'Eich'}
+```
+
+Can create methods on the object as part of encapsulation
+
+```function Person(name) {
+  return {
+    name: name,
+    log: function () {
+      console.log('My name is ' + this.name);
+    },
+  };
+}
+
+const p = new Person('Eich');
+p.log();
+// OUTPUT: My name is Eich
+```
+
+You can use classes to define objects. Using a class clarifies the intent to create a reusable component rather than a one-off object. Class declarations look similar to declaring an object, but classes have an explicit constructor and assumed function declarations.
+```
+class Person {
+  #name;
+
+  constructor(name) {
+    this.#name = name;
+  }
+}
+
+const p = new Person('Eich');
+p.log();
+// OUTPUT: My name is Eich
+p.#name = 'Lie';
+// OUTPUT: Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class
+```
+Make properties and functions private with #
+
+Classes can be extended using `extends`. Use `super` to access the superclass
+
+`this`
+
+Global - When this is referenced outside a function or object it refers to the globalThis object. The globalThis object represents the context for runtime environment. For example, when running in a browser, globalThis refers to the browser's window object.
+Function - When this is referenced in a function it refers to the object that owns the function. That is either an object you defined or globalThis if the function is defined outside of an object. Note that when running in JavaScript strict mode, a global function's this variable is undefined instead of globalThis.
+Object - When this is referenced in an object it refers to the object.
+
+Common JSModules are imported with Node.js. ES modules are modules built into JS
+
+Because modules create a file-based scope for the code they represent, you must explicitly export the objects from one file and then import them into another file
+
+```
+export function alertDisplay(msg) {
+  alert(msg);
+}
+```
+
+```
+import { alertDisplay } from './alert.js';
+
+alertDisplay('called from main.js');
+```
+
+From your HTML, you can specify that you are using an ES module by including a type attribute with the value of module in the script element. You can then import and use other modules. This is shown in the example below.
+
+```
+<script type="module">
+  import { alertDisplay } from './alert.js';
+  alertDisplay('module loaded');
+</script>
+```
+
+If we want to use a module in the global scope that our HTML or other non-module JavaScript is executing in, then we must leak it into the global scope. We do this by either attaching an event handler or explicitly adding a function to the global window object. In the example below, we expose the alertDisplay imported module function by attaching it to the global JavaScript window object so that it can then be called from the button onclick handler. We also expose the module function by attaching a keypress event.
+
+```
+<html>
+  <body>
+    <script type="module">
+      import { alertDisplay } from './alert.js';
+      window.btnClick = alertDisplay;
+
+      document.body.addEventListener('keypress', function (event) {
+        alertDisplay('Key pressed');
+      });
+    </script>
+    <button onclick="btnClick('button clicked')">Press me</button>
+  </body>
+</html>
+```
+
+If the button is pressed, now the module function will be called
+
+Don't usually have to differentiate between ES scope and global
+
+Document Object Model (DOM) is an object representation of HTML elements that the browser uses to render the display
+
+Browser also exposes the DOM to external code so you can dynamically change the HTML
+
+Browser provides access to DOM through the global variable `document` that points to the root element of the DOM
+If you open a browser's debugger console and type `document`, you'll see the DOM for the file that the page is currently rendering
+
+For everything in an HTML document, there's a node in the DOM
+
+Every element in an HTML document implements the DOM Element interface, which is derived from the DOM Node interface. The DOM Element Interface provides the means for iterating child elements, accessing the parent element, and manipulating the element's attributes. From your JavaScript code, you can start with the `document` variable and walk through the every element in the tree.
+
+```
+function displayElement(el) {
+  console.log(el.tagName);
+  for (const child of el.children) {
+    displayElement(child);
+  }
+}
+
+displayElement(document);
+```
+
+ou can provide a CSS selector to the `querySelectorAll` function in order to select elements from the document. The `textContent` property contains all of the element's text. You can even access a textual representation of an element's HTML content with the `innerHTML` property.
+
+```
+const listElements = document.querySelectorAll('p');
+for (const el of listElements) {
+  console.log(el.textContent);
+}
+```
+
+DOM supports ability to insert, modify, or delete elements. To create an element, first create it on the DOM document, then insert the element by appending it to an existing element on the DOM tree
+
+```
+function insertChild(parentSelector, text) {
+  const newChild = document.createElement('div');
+  newChild.textContent = text;
+
+  const parentElement = document.querySelector(parentSelector);
+  parentElement.appendChild(newChild);
+}
+
+insertChild('#courses', 'new course');
+```
+
+To delete elements, call the `removeChild` function on the parent element
+```
+function deleteElement(elementSelector) {
+  const el = document.querySelector(elementSelector);
+  el.parentElement.removeChild(el);
+}
+
+deleteElement('#courses div');
+```
+
+The DOM also allows you to inject entire blocks of HTML into an element. The following code finds the first div element in the DOM and replaces all the HTML it contains.
+
+```
+const el = document.querySelector('div');
+el.innerHTML = '<div class="injected"><b>Hello</b>!</div>';
+```
+
+If you're injecting HTML, make sure it can't be manipulated by the user. Otherwise it's a way for hackers to get in
+
+All DOM elements support the ability to attach a function that gets called when an event occurs on the element. These functions are called event listeners. Here is an example of an event listener that gets called when an element gets clicked.
+```
+const submitDataEl = document.querySelector('#submitData');
+submitDataEl.addEventListener('click', function (event) {
+  console.log(event.type);
+});
+```
+
+There are lots of possible events that you can add a listener to. This includes things like mouse, keyboard, scrolling, animation, video, audio, WebSocket, and clipboard events. You can see the full list on MDN. Here are a few of the more commonly used events.
+
+You can also add event listeners directly in the HTML. For example, here is a `onclick` handler that is attached to a button.
+`<button onclick='alert("clicked")'>click me</button>`
+
+The browser's localStorage API provides the ability to persistently store and retrieve data (i.e. scores, usernames, etc.,) on a user's browser across user sessions and HTML page renderings. For example, your frontend JavaScript code could store a user's name on one HTML page, and then retrieve the name later when a different HTML page is loaded. The user's name will also be available in local storage the next time the same browser is used to access the same website.
+
+In addition to persisting application data between page renderings, localStorage is also used as a cache for when data cannot be obtained from the server. For example, your frontend JavaScript could store the last high scores obtained from the service, and then display those scores in the future if the service is not available.
+
+four main functions with localStorage
+Function	Meaning
+setItem(name, value)	Sets a named item's value into local storage
+getItem(name)	Gets a named item's value from local storage
+removeItem(name)	Removes a named item from local storage
+clear()	Clears all items in local storage
+
+localStorage must be of type string, boolean, or number. If you want to store an object or array, must store it in JSON and then convert it back with JSON.stringify() and JSON.parse()
+
+Debugging JS
+https://github.com/webprogramming260/.github/blob/main/profile/javascript/debuggingJavascript/debuggingJavascript.md
