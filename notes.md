@@ -1168,3 +1168,238 @@ localStorage must be of type string, boolean, or number. If you want to store an
 
 Debugging JS
 https://github.com/webprogramming260/.github/blob/main/profile/javascript/debuggingJavascript/debuggingJavascript.md
+
+
+In the following code, what does the link element do?
+In the following code,  what does a div tag do?
+In the following code, what is the difference between the #title and .grid selector?
+  #selects by id
+  .selects by class
+In the following code, what is the difference between padding and margin?
+  Padding - space between the content of an element and its inner border
+  Margin - space outside the border of an element
+  
+Given this HTML and this CSS how will the images be displayed using flex?
+Container and Items:
+To use Flexbox, you need a parent container and one or more child items within it.
+The parent container is designated as a flex container using display: flex or display: inline-flex. This activates the flex layout for its children.
+
+Main and Cross Axis:
+In the context of Flexbox, the container has two axes: the main axis and the cross axis.
+The main axis is the primary axis along which the items are distributed. It's defined by the flex-direction property, which can be set to row, row-reverse, column, or column-reverse.
+The cross axis is perpendicular to the main axis.
+
+Flex Items:
+Each child item within the flex container is known as a flex item.
+By default, flex items will try to size themselves based on their content, but you can control their behavior using various CSS properties.
+
+Alignment:
+Flexbox provides powerful alignment and distribution capabilities for both the main and cross axis.
+You can use properties like justify-content and align-items to control alignment along the main and cross axes, respectively.
+Additionally, you can fine-tune alignment for individual items using properties like align-self.
+
+Flex Properties:
+The flex property is a shorthand for specifying how a flex item grows and shrinks to fit available space. It consists of three values: flex-grow, flex-shrink, and flex-basis.
+The flex-grow property controls how much an item grows relative to other items if there's extra space available.
+The flex-shrink property controls how much an item shrinks when there's not enough space.
+The flex-basis property sets the initial size of the item before distribution.
+
+Ordering:
+Flex items can be reordered using the order property, allowing you to change their visual order without altering the source order in the HTML.
+
+Nesting:
+You can nest flex containers within other flex containers, creating more complex layouts.
+
+Responsive Design:
+Flexbox is particularly useful for creating responsive layouts as items can adjust their size and position based on available space.
+
+When you use the flex property in CSS, it typically consists of three values: flex-grow, flex-shrink, and flex-basis. When you set flex: 0, you are essentially specifying values for these three components. Here's what each component means:
+
+flex-grow: This value controls how much an item can grow if there's extra space available in the flex container. A flex-grow value of 0 means that the item won't grow in relation to other items. It will maintain its initial size, and any extra space will be distributed among the other items that can grow (with a flex-grow value greater than 0).
+
+flex-shrink: This value controls how much an item can shrink if there's not enough space to accommodate all the items. A flex-shrink value of 0 means that the item won't shrink. It will maintain its size even if there's not enough space, potentially causing overflow or overlap with other items.
+
+flex-basis: This value sets the initial size of the flex item before any distribution takes place. A flex-basis value of 0 means that the item starts with a size of 0, but it can grow or shrink based on the flex-grow and flex-shrink values, respectively.
+
+What does the following padding CSS do?
+What does the following code using arrow syntax function declaration do?
+What does the following code using map with an array output?
+What does the following code output using getElementByID and addEventListener?
+What does the following line of Javascript do using a # selector?
+Which of the following are true? (mark all that are true about the DOM)
+By default, the HTML span element has a default CSS display property value of: 
+The <span> element in HTML has a default CSS display property value of "inline." This means that by default, a <span> element is displayed inline with the surrounding content, and it doesn't create a line break before or after itself. It essentially takes up as much width as necessary to contain its content and doesn't start on a new line.
+
+How would you use CSS to change all the div elements to have a background color of red?
+How would you display an image with a hyperlink in HTML?
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image with Hyperlink</title>
+</head>
+<body>
+    <a href="https://www.example.com">
+        <img src="your-image-source.jpg" alt="Image Description">
+    </a>
+</body>
+</html>
+```
+In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+content => padding => border => margin
+
+Given the following HTML, what CSS would you use to set the text "troubl" to green and leave the "double" text unaffected?
+What will the following code output when executed using a for loop and console.log?
+How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
+```
+const element = document.getElementById("myParagraph");
+element.textContent = "This paragraph's text has been changed.";
+// Select the paragraph element by its id
+const paragraph = document.getElementById("myParagraph");
+
+// Change the text color to red
+paragraph.style.color = "red";
+```
+
+What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+How do you declare the document type to be html?
+What is valid javascript syntax for if, else, for, while, switch statements?
+```
+let day = "Monday";
+switch (day) {
+    case "Monday":
+        console.log("It's the start of the week.");
+        break;
+    case "Friday":
+        console.log("It's almost the weekend.");
+        break;
+    default:
+        console.log("It's a regular day.");
+}
+```
+
+What is the correct syntax for creating a javascript object?
+
+Object Literal Notation:
+
+Object literal notation is the most common way to create objects in JavaScript. It involves defining key-value pairs within curly braces {}. Keys (property names) are strings, and values can be any valid JavaScript data type.
+
+```
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  isStudent: false,
+};
+```
+
+Object Constructor:
+
+You can create an object using the Object constructor. This approach is less common than object literal notation.
+
+```
+const person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 30;
+person.isStudent = false;
+```
+
+Object with Methods:
+
+You can also create objects that include methods (functions) as properties.
+
+```
+const calculator = {
+  add: function (a, b) {
+    return a + b;
+  },
+  subtract: function (a, b) {
+    return a - b;
+  },
+};
+```
+
+Object with ES6 Shorthand:
+
+In ECMAScript 6 (ES6) and later, you can use shorthand property and method syntax to create objects more concisely.
+
+```
+const name = "John";
+const age = 30;
+
+const person = {
+  name,
+  age,
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  },
+};
+```
+
+Is is possible to add new properties to javascript objects?
+Yes, using dot OR bracket notation
+
+If you want to include JavaScript on an HTML page, which tag do you use?
+  `<script src="script.js"></script>`
+  
+Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
+Which of the following correctly describes JSON?
+What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+  chmod -  Stands for "change mode." It is used to change the permissions of files and directories, allowing you to control who can read, write, or execute them.
+  pwd - Current directory
+  cd - Change directory
+  ls - List directory contents
+  vim - text editor for the command line - allows you to create and edit text
+  nano - Another text editor, good for simple editing tasks
+  mkdir - create new directories or folders
+  mv - move something from one directory to another
+  rm - delete files
+  man - used to access the manual pages for commands, providing detailed documentation and usage information.
+  ssh - used to establish secure remote connections to other machines, typically for remote administration or file transfer.
+  ps - Stands for "process status." It lists running processes on the system, providing information about their status.
+  wget - command-line tool for downloading files from the internet. You can use it to fetch files and web pages.
+  sudo - used to run commands with superuser or administrative privileges. It is often required for system-level tasks
+Which of the following console command creates a remote shell session?
+ssh username@remote_host
+Replace username with your remote username and remote_host with the hostname or IP address of the remote server.
+
+Which of the following is true when the -la parameter is specified for the ls console command?
+when you use the -la option with ls, it displays a long format listing that includes hidden files and directories. The output will show all files and directories, including those with names starting with a dot. This is particularly useful when you want to see all the contents of a directory, including hidden configuration files, for example.
+
+Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
+  Top level - .com, .org, .click, etc.
+  root domain - google.com, lds.org, etc.
+  subdomain - whatever.thing.com
+Is a web certificate is necessary to use HTTPS.
+Yes
+
+Can a DNS A record can point to an IP address or another A record.
+Yes, a DNS A record can point to either an IP address or another A record. This is a common DNS configuration used for various purposes, such as load balancing, failover, and creating DNS aliases. Here's an explanation of both scenarios:
+
+A Record Pointing to an IP Address:
+
+The most straightforward use of an A record is to map a domain name to an IP address. This allows users' web browsers to resolve a domain name to a specific server's IP address when they visit a website.
+For example, you can create an A record like this:
+css
+Copy code
+example.com.       IN A 192.168.1.100
+A Record Pointing to Another A Record (DNS Alias):
+
+An A record can also point to another A record, creating a DNS alias or a round-robin DNS configuration. In this setup, the first A record (alias) points to the second A record (target), which, in turn, points to an IP address. This allows you to change the IP address by updating only the second A record, which is then automatically reflected by the alias A record.
+Here's an example:
+css
+Copy code
+alias.example.com. IN A target.example.com.
+target.example.com. IN A 192.168.1.100
+In this case, the "alias.example.com" A record points to "target.example.com," which, in turn, points to the IP address "192.168.1.100." If the IP address needs to change, you only need to update the "target.example.com" A record.
+This type of configuration is often used in scenarios like load balancing, where multiple servers share the same domain name, and the DNS system distributes traffic among them. It's also useful for scenarios where failover is necessary, as it allows for quick changes to the target IP address without needing to update all references to the domain.
+
+Port 443, 80, 22 is reserved for which protocol?
+Port 443: Port 443 is reserved for the HTTPS (Hypertext Transfer Protocol Secure) protocol. It is used for secure web communications. When you visit a website that uses "https://" in the URL, your web browser communicates with the server using port 443 to establish a secure and encrypted connection.
+
+Port 80: Port 80 is reserved for the HTTP (Hypertext Transfer Protocol) protocol, which is the standard unsecured protocol for web communication. When you visit a website that uses "http://" in the URL, your web browser communicates with the server using port 80.
+
+Port 22: Port 22 is reserved for the SSH (Secure Shell) protocol. SSH is a network protocol used for secure remote access and secure file transfers. It is commonly used for managing and administering remote servers securely.
+
+What will the following code using Promises output when executed?
