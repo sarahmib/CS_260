@@ -1,49 +1,75 @@
 function display_user() {
-    document.getElementById("calendar_name").innerHTML = localStorage.getItem("username")
+    document.getElementById("calendar_name").innerHTML = localStorage.getItem("username");
 }
 
 function display_events(event) {
-    events = JSON.parse(localStorage.getItem("events"));
+    // Parse the events from localStorage
+    const events = JSON.parse(localStorage.getItem("events"));
 
-    month = document.getElementById("month");
-    month = month.name;
+    // Get the selected date from the clicked cell
+    const dateClicked = event.target.id;
 
-    year = document.getElementById("year");
-    year = year.name
+    // Get the selected month and year
+    const month = document.getElementById("month").getAttribute("name");
+    const year = document.getElementById("year").getAttribute("name");
 
-    dateClicked = event.target;
-    dateClicked = dateClicked.id;
+    const date = `${month}/${dateClicked}/${year}`;
 
-    const date = month + '/' + dateClicked + '/' + year;
-
-    if (date in events) {
-        events = events.date;
-    }
-
-    const eventContainer = document.getElementById('scheduledEvents');
-
-    for (const event of events) {
-        const eventDiv = document.createElement('div');
-        eventDiv.innerHTML = `
-            <h3>${event.eventName}</h3>
-            <span>Event name: ${event.eventName}</span> <span>Event date: ${event.eventDate}</span>
-            <br>
-            <span>Event time: ${event.eventTime}</span> <span>Event location: ${event.eventLocation}</span>
-            <br>
-            <span>Notes: ${event.notes}</span>
-            <br> <br>
-        `;
-
-        if(event.comments.length) {
+    // Check if events exist for the selected date
+    if (events && events[date]) {
+        const eventContainer = document.getElementById('scheduledEvents');
+        eventContainer.innerHTML = ''; // Clear the previous events
         
-            for (const comment of event.comments) {
-                const commentSpan = document.createElement('span');
-                commentSpan.textContent = comment; // needs to be format of "user: comment"
-                eventDiv.appendChild(commentSpan);
-                eventDiv.appendChild(document.createElement('br'));
-            }
-        }
+        const selectedEvents = events[date];
+        
+        for (const event of selectedEvents) {
+            const eventDiv = document.createElement('div');
+            eventDiv.innerHTML = `
+                <h3>${event.eventName}</h3>
+                <span>Event name: ${event.eventName}</span> <span>Event date: ${event.eventDate}</span>
+                <br>
+                <span>Event time: ${event.eventTime}</span> <span>Event location: ${event.eventLocation}</span>
+                <br>
+                <span>Notes: ${event.notes}</span>
+                <br> <br>
+            `;
 
-        eventContainer.appendChild(eventDiv);
+            if (event.comments.length) {
+                for (const comment of event.comments) {
+                    const commentSpan = document.createElement('span');
+                    commentSpan.textContent = comment; // Should be in the format "user: comment"
+                    eventDiv.appendChild(commentSpan);
+                    eventDiv.appendChild(document.createElement('br'));
+                }
+            }
+
+            const addCommentSpan = document.createElement('span');
+            addCommentSpan.textContent = "Add comment: ";
+            const commentInput = document.createElement('input');
+            commentInput.setAttribute("type", "text");
+            commentInput.setAttribute("placeholder", "Enter your comment");
+            const commentButton = document.createElement('button');
+            commentButton.textContent = "Submit Comment";
+
+            commentButton.addEventListener('click', () => {
+                const commentText = commentInput.value;
+                if (commentText) {
+                    event.comments.push(`User: ${commentText}`);
+                    // Update the events array in localStorage here if necessary
+                    localStorage.setItem("events", JSON.stringify(events));
+                    
+                    const commentSpan = document.createElement('span');
+                    commentSpan.textContent = `User: ${commentText}`;
+                    eventDiv.appendChild(commentSpan);
+                    eventDiv.appendChild(document.createElement('br'));
+                }
+            });
+
+            eventDiv.appendChild(addCommentSpan);
+            eventDiv.appendChild(commentInput);
+            eventDiv.appendChild(commentButton);
+
+            eventContainer.appendChild(eventDiv);
+        }
     }
 }
