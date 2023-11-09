@@ -1605,3 +1605,18 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
     console.log(jsonResponse);
   });
 ```
+
+Nodes + packages
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/node/node.md
+
+Node package `express` provies support for
+  Routing requests for service endpoints
+  Manipulating HTTP requests with JSON body content
+  Generating HTTP responses
+  Using `middleware` to add functionality
+
+How to use `express`
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/express/express.md
+
+Web services
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/design/design.md
