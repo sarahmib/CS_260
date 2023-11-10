@@ -1620,3 +1620,7 @@ https://github.com/webprogramming260/.github/blob/main/profile/webServices/expre
 
 Web services
 https://github.com/webprogramming260/.github/blob/main/profile/webServices/design/design.md
+
+In order to keep programs running after the machine it's running from is shut down, register it as a `daemon`
+PM2 offers an easy way to start and stop services as well as keep it running
+
