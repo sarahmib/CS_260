@@ -1,5 +1,4 @@
-document.getElementById('eventForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+function submit_event() {
 
     var eventData = {
         eventName: document.getElementById('event name').value,
@@ -19,4 +18,6 @@ document.getElementById('eventForm').addEventListener('submit', function (event)
     events[eventData.eventDate].push(eventData);
 
     localStorage.setItem("events", JSON.stringify(events));
-});
+
+    window.location.href = "submit_event.html";
+}

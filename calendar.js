@@ -1,5 +1,7 @@
 function display_user() {
-    document.getElementById("calendar_name").innerHTML = localStorage.getItem("username");
+    console.log(localStorage.getItem('username'));
+    console.log(document.getElementById("whose_calendar"));
+    document.getElementById("calendar_name").innerHTML = localStorage.getItem("username") + "'s calendar";
 }
 
 function display_events(event) {

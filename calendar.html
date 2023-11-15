@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <script src="calendar.js"></script>
 </head>
-<body>
+<body onload="display_user();">
     <header>
         <h1>Share the Day</h1>
         <nav>
@@ -21,7 +21,7 @@
 
       </header>
 
-    <div id="whose_calendar"><div id=calendar><span id="calendar_name"></span>'s calendar</div>
+    <div id="whose_calendar"><div id=calendar><span id="calendar_name"></span></div>
     <h1 id="month" name="10">October </h1>
     <h1 id="year" name="2023">2023</h1>
     <img alt="month icon" src="Pumpkin.png"
@@ -43,8 +43,14 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="calendar_day" id="1" onclick="display_events(event)">1</td>
-            <td class="calendar_day" id="2" onclick="display_events(event)">2</td>
+            <td class="calendar_day">
+            <a href="#" onclick="display_events('1')">
+                <span id="1">
+                1
+                </span>
+            </a>
+            </td>
+            <td class="calendar_day" id="2" onclick="display_events(event);">2</td>
             <td class="calendar_day" id="3" onclick="display_events(event)">3</td>
             <td class="calendar_day" id="4" onclick="display_events(event)">4</td>
         </tr>
