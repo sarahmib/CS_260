@@ -4,18 +4,15 @@ function display_user() {
     document.getElementById("calendar_name").innerHTML = localStorage.getItem("username") + "'s calendar";
 }
 
-function display_events(event) {
+function display_events(day) {
     // Parse the events from localStorage
     const events = JSON.parse(localStorage.getItem("events"));
-
-    // Get the selected date from the clicked cell
-    const dateClicked = event.target.id;
 
     // Get the selected month and year
     const month = document.getElementById("month").getAttribute("name");
     const year = document.getElementById("year").getAttribute("name");
 
-    const date = `${month}/${dateClicked}/${year}`;
+    const date = `${month}/${day}/${year}`;
 
     // Check if events exist for the selected date
     if (events && events[date]) {

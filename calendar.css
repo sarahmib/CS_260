@@ -21,7 +21,7 @@ li {
     cursor: text;
 }
 
-a {
+#links {
     color: white;
     text-decoration: none;
 }
@@ -47,7 +47,7 @@ h3 {
     color: #444749;
 }
 
-span {
+#calendar_name {
     position: relative;
     left: 3vw;
     padding: 3px;
@@ -90,6 +90,7 @@ table th, table td {
 
 table td {
     height: 100px;
+    text-align: center;
 }
 
 #month {
@@ -107,6 +108,11 @@ table td {
 #calendar {
     position: relative;
     margin-top: auto;
+}
+
+#day {
+    text-decoration: none;
+    color: black;
 }
 
 input[type=text], select {
