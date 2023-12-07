@@ -29,20 +29,21 @@ async function display_events(day) {
         
         const selectedEvents = events[date];
         
-        for (const event of selectedEvents) {
+        for (single_event of selectedEvents) {
             const eventDiv = document.createElement('div');
             eventDiv.innerHTML = `
-                <h3>${event.eventName}</h3>
-                <span>Event name: ${event.eventName}</span> <span>Event date: ${event.eventDate}</span>
+                <h3>${single_event.eventName}</h3>
+                <span>Event name: ${single_event.eventName}</span> <span>Event date: ${single_event.eventDate}</span>
                 <br>
-                <span>Event time: ${event.eventTime}</span> <span>Event location: ${event.eventLocation}</span>
+                <span>Event time: ${single_event.eventTime}</span> <span>Event location: ${single_event.eventLocation}</span>
                 <br>
-                <span>Notes: ${event.notes}</span>
+                <span>Notes: ${single_event.notes}</span>
                 <br> <br>
             `;
-
-            if (event.comments.length) {
-                for (const comment of event.comments) {
+            
+            /*
+            if (single_event.comments.length) {
+                for (const comment of single_event.comments) {
                     const commentSpan = document.createElement('span');
                     commentSpan.textContent = comment; // Should be in the format "user: comment"
                     eventDiv.appendChild(commentSpan);
@@ -61,22 +62,48 @@ async function display_events(day) {
             commentButton.addEventListener('click', () => {
                 const commentText = commentInput.value;
                 if (commentText) {
-                    event.comments.push(`User: ${commentText}`);
-                    // Update the events array in localStorage here if necessary
-                    localStorage.setItem("events", JSON.stringify(events));
+                    console.log(single_event);
+                    console.log('this worked 1');
+                    updated_event = postComment(single_event, commentText);
                     
                     const commentSpan = document.createElement('span');
                     commentSpan.textContent = `User: ${commentText}`;
                     eventDiv.appendChild(commentSpan);
                     eventDiv.appendChild(document.createElement('br'));
+
+                    single_event = updated_event;
+                    localStorage.setItem('events', JSON.stringify(events));
                 }
             });
 
             eventDiv.appendChild(addCommentSpan);
             eventDiv.appendChild(commentInput);
             eventDiv.appendChild(commentButton);
+            */
 
             eventContainer.appendChild(eventDiv);
         }
     }
 }
+
+// COMMENT FUNCTIONALITY BUGGED. REMOVED FOR NOW
+/*
+async function postComment(event, comment) {
+    try {
+        console.log('this worked 2')
+        event_and_comment = [event, comment]
+        const response = await fetch('/api/comment', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(event_and_comment)
+        });
+
+        const updated_event = await response.json();
+        return updated_event;
+    } catch{
+        event.comments.push(`User: ${comment}`);
+        localStorage.setItem("events", JSON.stringify(events));
+        return event;
+    }
+}
+*/
