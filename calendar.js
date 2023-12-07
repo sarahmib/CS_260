@@ -4,9 +4,17 @@ function display_user() {
     document.getElementById("calendar_name").innerHTML = localStorage.getItem("username") + "'s calendar";
 }
 
-function display_events(day) {
-    // Parse the events from localStorage
-    const events = JSON.parse(localStorage.getItem("events"));
+async function display_events(day) {
+
+    try {
+        const response = await(fetch('/api/scores'));
+        events = await response.json();
+
+        localStorage.setItem('events', JSON.stringify(events));
+    } catch {
+        eventsText = localStorage.getItem('events');
+        events = JSON.parse(eventsText);
+    }
 
     // Get the selected month and year
     const month = document.getElementById("month").getAttribute("name");
