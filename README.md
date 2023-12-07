@@ -64,3 +64,4 @@ For this deliverable, I added service endpoints as well as placeholders for futu
 - Calls to third party endpoints - Done on about page
 - Backend service endpoints - Endpoints created
 - Frontend calls service endpoints - Done using fetch function
+- Please note that the comment functionality on events is bugged and has been removed for the time being, but all required aspects of the project are still fulfilled.
