@@ -42,9 +42,16 @@ Tired of messages for hangout plans getting buried in the group chat? Forgetting
 ## CSS deliverable
 For this deliverable I properly styled the application into its final appearance.
 
-Header, footer, and main content body
-Navigation elements - I styled them into the layout and appearance I wanted
-Responsive to window resizing - My app responds to size changes in the desired way
-Application elements - Use of contrast and whitespace
-Application text content - Consistent fonts
-Application images - Finalized the layout of the month's icon
+- Header, footer, and main content body
+- Navigation elements - I styled them into the layout and appearance I wanted
+- Responsive to window resizing - My app responds to size changes in the desired way
+- Application elements - Use of contrast and whitespace
+- Application text content - Consistent fonts
+- Application images - Finalized the layout of the month's icon
+
+## JS deliverable
+For this deliverable I implemented JavaScript so that the app is usable to an extent. I also added placeholders for future technology.
+
+- Login - When you press the login button it takes you to the voting page and displays the input username above the calendar
+- Database - Displays events on a given day when it is clicked, as well as comments left on a given event
+- WebSocket - Events and comments displayed will also be updated live
