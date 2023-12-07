@@ -55,3 +55,12 @@ For this deliverable I implemented JavaScript so that the app is usable to an ex
 - Login - When you press the login button it takes you to the voting page and displays the input username above the calendar
 - Database - Displays events on a given day when it is clicked, as well as comments left on a given event
 - WebSocket - Events and comments displayed will also be updated live
+
+## Service deliverable
+For this deliverable, I added service endpoints as well as placeholders for future technology such as a database
+
+- Node.js/Express HTTP service - Done
+- Static middleware for frontend - Done
+- Calls to third party endpoints - Done on about page
+- Backend service endpoints - Endpoints created
+- Frontend calls service endpoints - Done using fetch function
