@@ -1,5 +1,4 @@
 async function submit_event() {
-    console.log('success1');
     var eventData = {
         eventName: document.getElementById('event name').value,
         eventDate: document.getElementById('event month').value + '/' + document.getElementById('event day').value + '/' + document.getElementById('event year').value,
