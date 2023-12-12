@@ -27,11 +27,7 @@ function update_events_local(event) {
 
     events = JSON.parse(localStorage.getItem("events"));
 
-    if (!events[event.eventDate]){
-        events[event.eventDate] = [];
-    }
-
-    events[event.eventDate].push(event);
+    events.push(event);
 
     localStorage.setItem("events", JSON.stringify(events));
 
