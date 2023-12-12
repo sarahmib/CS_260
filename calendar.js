@@ -6,8 +6,14 @@ function display_user() {
 
 async function display_events(day) {
 
+    // Get the selected month and year
+    const month = document.getElementById("month").getAttribute("name");
+    const year = document.getElementById("year").getAttribute("name");
+
+    const date = `${month}/${day}/${year}`;
+
     try {
-        const response = await(fetch('/api/scores'));
+        const response = await(fetch(`/api/events?day=${date}`));
         events = await response.json();
 
         localStorage.setItem('events', JSON.stringify(events));
@@ -16,12 +22,21 @@ async function display_events(day) {
         events = JSON.parse(eventsText);
     }
 
-    // Get the selected month and year
-    const month = document.getElementById("month").getAttribute("name");
-    const year = document.getElementById("year").getAttribute("name");
-
-    const date = `${month}/${day}/${year}`;
-
+    if (events) {
+        for (single_event of events) {
+            const eventDiv = document.createElement('div');
+            eventDiv.innerHTML = `
+                <h3>${single_event.eventName}</h3>
+                <span>Event name: ${single_event.eventName}</span> <span>Event date: ${single_event.eventDate}</span>
+                <br>
+                <span>Event time: ${single_event.eventTime}</span> <span>Event location: ${single_event.eventLocation}</span>
+                <br>
+                <span>Notes: ${single_event.notes}</span>
+                <br> <br>
+            `;
+            eventContainer.appendChild(eventDiv);
+        }
+    }
     // Check if events exist for the selected date
     if (events && events[date]) {
         const eventContainer = document.getElementById('scheduledEvents');
