@@ -1,5 +1,6 @@
 async function submit_event() {
     var eventData = {
+        username: localStorage.getItem('userName'), 
         eventName: document.getElementById('event name').value,
         eventDate: document.getElementById('event month').value + '/' + document.getElementById('event day').value + '/' + document.getElementById('event year').value,
         eventTime: document.getElementById('event hour').value + ':' + document.getElementById('event minute').value + ' ' + document.getElementById('am pm').value,
