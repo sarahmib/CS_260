@@ -65,3 +65,10 @@ For this deliverable, I added service endpoints as well as placeholders for futu
 - Backend service endpoints - Endpoints created
 - Frontend calls service endpoints - Done using fetch function
 - Please note that the comment functionality on events is bugged and has been removed for the time being, but all required aspects of the project are still fulfilled.
+
+## DB deliverable
+For this deliverable, I stored the events in the database
+
+- MongoDB Atlas database created - Done
+- Endpoints for data - My endpoints process data, send it to mongo's database, and retrieve from the database
+- Stores data in MongoDB - Done
