@@ -1,7 +1,5 @@
 function display_user() {
-    console.log(localStorage.getItem('username'));
-    console.log(document.getElementById("whose_calendar"));
-    document.getElementById("calendar_name").innerHTML = localStorage.getItem("username") + "'s calendar";
+    document.getElementById("calendar_name").innerHTML = localStorage.getItem("userName") + "'s calendar";
 }
 
 async function display_events(day) {

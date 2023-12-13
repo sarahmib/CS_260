@@ -9,10 +9,8 @@ async function login() {
     },
   });
 
-  if (response.ok) {
-    localStorage.setItem(userName, uname.value);
-    window.location.href = "calendar.html";
-  }
+  localStorage.setItem('userName', userName);
+  window.location.href = "calendar.html";
   }
 
 async function createUser() {
@@ -20,14 +18,13 @@ async function createUser() {
   const password = document.querySelector('#password')?.value;
   const response = await fetch('/api/auth/create', {
     method: 'post',
-    body: JSON.stringify({ email: userName, password: password }),
+    body: JSON.stringify({ userName: userName, password: password }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
-
-  if (response.ok) {
-    localStorage.setItem(userName, uname.value);
-    window.location.href = "calendar.html";
-  }
+  
+  localStorage.setItem('userName', userName);
+  window.location.href = "calendar.html";
+  
 }
