@@ -79,4 +79,4 @@ For this deliverable, I associate submitted events with an authenticated user
 - User registration - Creates a new account in the database.
 - Existing user - Existing users can login, create events under the username, and access only events associated with the username.
 - Use MongoDB to store credentials - Stores both user and the events.
-- Restricts functionality - You cannot submit or view events until you have logged in. Please note that this restriction is on the backend, and no indication is shown on the frontend
+- Restricts functionality - You cannot submit or view events until you have logged in. Please note that this restriction is on the backend, and no indication is shown on the frontend besides the website not functioning the same as a user that is logged in
