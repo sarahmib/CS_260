@@ -9,11 +9,11 @@ async function display_events(day) {
     const year = document.getElementById("year").getAttribute("name");
     const eventContainer = document.getElementById("scheduledEvents");
 
-
+    const userName = localStorage.getItem('userName');
     const date = `${month}/${day}/${year}`;
     console.log(date)
     try {
-        const response = await(fetch(`/api/events?day=${date}`));
+        const response = await(fetch(`/api/events?day=${date}&username=${userName}`));
         specific_day_events = await response.json();
         console.log(response)
     } catch {
