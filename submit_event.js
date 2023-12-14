@@ -36,21 +36,31 @@ function update_events_local(event) {
     window.location.href = "submit_event.html";
 };
 
-function configureWebSocket() {
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-    
-    socket.onmessage = async (event) => {
-      const msg = JSON.parse(await event.data.text());
-      displayMsg('New event: ', msg);
-    }
-};
 
-function displayMsg(cls, msg) {
-    //TODO
-};
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    displayMsg('New event: ' + msg);
+}
+
+function displayMsg(msg) {
+  const banner = document.getElementById('banner');
+  messageElement = document.createElement('div');
+  messageElement.textContent = msg;
+
+  banner.appendChild(messageElement);
+
+  banner.style.display = 'block';
+
+  setTimeout(() => {
+    messageElement.remove();
+    banner.style.display = 'none';
+  }, 5000);
+}
 
 function broadcastEvent(day) {
     const event_notification = `Someone has posted a new event on ${day}! Please refresh the page to view.`
-    this.socket.send(JSON.stringify(event_notification));
+    socket.send(JSON.stringify(event_notification));
     };

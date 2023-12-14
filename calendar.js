@@ -1,6 +1,5 @@
 function display_user() {
     document.getElementById("calendar_name").innerHTML = localStorage.getItem("userName") + "'s calendar";
-    configureWebSocket();
 }
 
 async function display_events(day) {
@@ -41,16 +40,25 @@ async function display_events(day) {
     }
 }
 
-function configureWebSocket() {
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-    
-    socket.onmessage = async (event) => {
-      const msg = JSON.parse(await event.data.text());
-      displayMsg('New event: ', msg);
-    }
-};
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
-function displayMsg(cls, msg) {
-    //TODO
-};
+socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    displayMsg('New event: ' + msg);
+}
+
+function displayMsg(msg) {
+  const banner = document.getElementById('banner');
+  messageElement = document.createElement('div');
+  messageElement.textContent = msg;
+
+  banner.appendChild(messageElement);
+
+  banner.style.display = 'block';
+
+  setTimeout(() => {
+    messageElement.remove();
+    banner.style.display = 'none';
+  }, 5000);
+}
