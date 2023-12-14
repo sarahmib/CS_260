@@ -19,6 +19,7 @@ async function submit_event() {
         const events = await response.json();
         localStorage.setItem('events', JSON.stringify(events));
         window.location.href = "submit_event.html";
+        broadcastEvent(eventData.eventDate);
     } catch {
         update_events_local(eventData);
     }
@@ -48,3 +49,8 @@ function configureWebSocket() {
 function displayMsg(cls, msg) {
     //TODO
 };
+
+function broadcastEvent(day) {
+    const event_notification = `Someone has posted a new event on ${day}! Please refresh the page to view.`
+    this.socket.send(JSON.stringify(event_notification));
+    };
