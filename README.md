@@ -80,3 +80,11 @@ For this deliverable, I associate submitted events with an authenticated user
 - Existing user - Existing users can login, create events under the username, and access only events associated with the username.
 - Use MongoDB to store credentials - Stores both user and the events.
 - Restricts functionality - You cannot submit or view events until you have logged in. Please note that this restriction is on the backend, and no indication is shown on the frontend besides the website not functioning the same as a user that is logged in
+
+## Websocket deliverable
+For this deliverable, I made it so that the backend listens for when someone submits an event, then submits a notification to the frontend in real time that an event was submitted
+
+Backend listens for WebSocket connection - Done
+Frontend makes WebSocket connection - Done
+Data sent over WebSocket connection - Done
+WebSocket data displayed - When one user submits an event, the rest of the users get a notification banner for 5 seconds on the top of their screen stating that someone submitted an event and on what day they submitted it. Unfortunately, it does not check to make sure that two people are on the same calendar, but the WebSocket data IS displayed
