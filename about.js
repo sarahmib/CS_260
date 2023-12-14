@@ -19,3 +19,17 @@ function displayQuote(data) {
   }
  
   displayQuote();
+
+  function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      displayMsg('New event: ', msg);
+    }
+};
+
+function displayMsg(cls, msg) {
+  //TODO
+};
