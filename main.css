@@ -90,3 +90,16 @@ footer {
     margin-top: 2em;
     border-top: 1px solid #444749
 }
+
+#banner {
+    display: none; 
+    background-color: #1D3B4D;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
