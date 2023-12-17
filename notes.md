@@ -1624,3 +1624,120 @@ https://github.com/webprogramming260/.github/blob/main/profile/webServices/desig
 In order to keep programs running after the machine it's running from is shut down, register it as a `daemon`
 PM2 offers an easy way to start and stop services as well as keep it running
 
+What ports are used for HTTP, HTTPS, SSH?
+HTTP - 80
+HTTPS - 443
+SSH - 22
+
+What do HTTP status codes in the 300, 400, 500 range indicate?
+300 - redirection messages
+400 - client error responses
+500 - server error responses
+
+What does the HTTP header content-type allows you to do?
+Indicates the media type of the resource
+
+What do the following attributes of a cookie do?
+Domain - specifies the domain for which the cookie is valid
+Path - specifies the url path for which the cookie is valid
+SameSite - will only return the cookie to the domain that generated it
+HTTPOnly - tells the browser to not allow JavaScript running on the browser to read the cookie
+
+Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+Given the following Express service code: What does the following JavaScript fetch return?
+Given the following MongoDB query
+
+{ cost: { $gt: 10 }, name: /fran.*/}
+select all of the matching documents.
+  Cost is greater than 10
+  Name starts with 'fran' followed by 0 or more characters
+
+How should you store user passwords in a database?
+  Cryptographically hash them (we used the bcrypt module)
+
+Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+What is the WebSocket protocol used for?
+  After initial connection is made to a client, two users can communicate and transmit information directly to each other in real time
+
+What is JSX and how are the curly braces rendered?
+  JSX is a JavaScript extension that allows creation of DOM trees. The curly braces are an escape back into JS so that JSX registers it as JS and not as a string
+  
+Assuming a HTML document with a 
+<div id="root"></div>
+element, what content will the following React component generate?
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+Assuming a HTML document with a 
+<div id="root"></div>
+element, what content will the following React component generate?
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+What does the following React component do?
+function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+What are React Hooks used for?
+  Allows function style componenets to do everything class style components can do and more
+      
+What is the useEffect hook used for?
+  Allows you to represent life cycle events. Useful for creating side effects, like if and when a compenent is displayed or hidden
+
+What does this code do?
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+  creates endpoints
+
+What role does npm play in web development?
+  Allows you to download various modules for use in JS
+
+What does package.json do in a npm project?
+  It manages project dependencies - basically tells you what you need to have in order to run the program
+
+What does the fetch function do?
+  
+What does node.js do?
+  Provides an environment on which JS can run on the server side
+  
+What does Vite do?
+  Vite bundles everything together and allows you to use different code (such as JSX) easily
+  
